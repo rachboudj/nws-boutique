@@ -2,4 +2,15 @@
 
 require_once "./src/Database/Database.php";
 
-echo "helloooo";
+require_once('src/Controller/accueil.php');
+require_once('src/Controller/produits.php');
+
+if (isset($_GET['page'])) {
+    if ($_GET['page'] === 'accueil') {
+        accueil();
+    } elseif ($_GET['page'] === 'produits') {
+        produits();
+    }
+} else {
+    accueil();
+}
