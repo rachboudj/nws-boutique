@@ -10,7 +10,9 @@ if (isset($_GET['page'])) {
     if ($_GET['page'] === 'accueil') {
         accueil();
     } elseif ($_GET['page'] === 'produits') {
-        produits();
+        affichProduits();
+    } elseif ($_GET['page'] === 'ajoutProduits') {
+        ajoutProduits();
     } elseif ($_GET['page'] === 'inscription') {
         inscription();
     }
