@@ -14,7 +14,7 @@ class ProduitsModel {
         $query->bindValue(':description', $description, PDO::PARAM_STR);
         $query->bindValue(':image', $image, PDO::PARAM_STR);
         $query->bindValue(':prix', $prix, PDO::PARAM_STR);
-        $query->bindValue(':quantite', $quantite, PDO::PARAM_STR);
+        $query->bindValue(':quantite', $quantite, PDO::PARAM_INT);
 
         $query->execute();
     }
