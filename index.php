@@ -13,7 +13,11 @@ if (isset($_GET['page'])) {
         affichProduits();
     } elseif ($_GET['page'] === 'ajoutProduits') {
         ajoutProduits();
-    } elseif ($_GET['page'] === 'inscription') {
+    } elseif ($_GET['page'] === 'modifProduits') {
+        modifProduits();
+    } elseif ($_GET['page'] === 'supprProduits') {
+        supprProduits();
+    }  elseif ($_GET['page'] === 'inscription') {
         inscription();
     }
 } else {
