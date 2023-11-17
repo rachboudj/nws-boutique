@@ -4,7 +4,11 @@ require_once './src/Model/produits.php';
 require_once './src/utils/functions.php';
 
 function affichProduits() {
-    $produits = "Page produits";
+    $pdo = (new Database())->getPdo();
+    $model = new ProduitsModel($pdo);
+
+    $produits = $model->showProducts();
+
 
     require './src/View/produits/produits.php';
 }
