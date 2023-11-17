@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 
 <div class="container-table">
-    <h1>Nos produits projets</h1>
+    <h1>Nos produits</h1>
     <table>
         <thead>
             <tr>
@@ -29,8 +29,8 @@
                     <td><?= $produit['quantite']; ?></td>
                     <td><?= $produit['misEnAvant']; ?></td>
                     <td><?= $produit['id_categorie']; ?></td>
-                    <td><a href="index.php?page=modifProduit&amp;produitId=<?= $produit['id_produit'] ?>">Modifier</a></td>
-                    <td><a href="index.php?page=supprProduit&amp;produitId=<?= $produit['id_produit'] ?>">Supprimer</a></td>
+                    <td><a href="index.php?page=modifProduits&amp;produitId=<?= $produit['id_produit'] ?>">Modifier</a></td>
+                    <td><a href="index.php?page=supprProduits&amp;produitId=<?= $produit['id_produit'] ?>">Supprimer</a></td>
                 </tr>
             <?php } ?>
         </tbody>
