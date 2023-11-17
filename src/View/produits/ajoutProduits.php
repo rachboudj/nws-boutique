@@ -30,8 +30,8 @@
 
     <label for="prix">Prix</label>
     <input type="number" name="prix" step="0.01">
-    <span class="error"><?php if (!empty($errors['quantite'])) {
-                            echo $errors['quantite'];
+    <span class="error"><?php if (!empty($errors['prix'])) {
+                            echo $errors['prix'];
                         } ?></span>
 
     <input class="buttons" type="submit" name="submit" value="Ajouter un produit">
