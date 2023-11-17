@@ -16,10 +16,6 @@ function ajoutProduits() {
     $errors = array();
 
     if (!empty($_POST['submit'])) {
-        echo "<pre>";
-        echo $_POST;
-        echo "</pre>";
-
         $nom = trim(strip_tags($_POST['nom']));
         $description = trim(strip_tags($_POST['description']));
         $image = trim(strip_tags($_POST['image']));
@@ -28,6 +24,8 @@ function ajoutProduits() {
 
         $errors = validationTexte($errors, $nom, 'nom', 3, 100);
         $errors = validationTexte($errors, $description, 'description', 3, 1000);
+        $errors = validationTexte($errors, $quantite, 'quantite', 1, 1000);
+        $errors = validationTexte($errors, $prix, 'prix', 1, 1000);
     
         if (count($errors) === 0) {
             $model->addProducts($nom, $description, $image, $quantite, $prix);
