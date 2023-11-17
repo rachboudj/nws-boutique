@@ -13,6 +13,7 @@
                 <ul>
                     <li><a href="index.php?page=accueil">Accueil</a></li>
                     <li><a href="index.php?page=produits">Produits</a></li>
+                    <li><a href="index.php?page=ajoutProduits">Ajouter un produit</a></li>
                     <li><a href="index.php?page=inscription">Inscription</a></li>
                     <li><a href="">Panier</a></li>
                     <li><a href="">Produits admin</a></li>
