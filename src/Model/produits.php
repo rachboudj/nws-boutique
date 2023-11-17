@@ -19,4 +19,11 @@ class ProduitsModel {
         $query->execute();
     }
 
+    public function showProducts() {
+        $requeteAffichage = "SELECT * FROM produits ORDER BY id_produit DESC";
+        $query = $this->pdo->prepare($requeteAffichage);
+        $query->execute();
+        return $query->fetchAll();
+    }
+
 }
