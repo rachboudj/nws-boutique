@@ -1,3 +1,18 @@
+@import url(./tableau.css);
+
 body {
     background-color: #ffffd1;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.container {
+    display: flex;
+}
+
+.card {
+    display: block;
 }

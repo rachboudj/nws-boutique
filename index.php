@@ -10,8 +10,14 @@ if (isset($_GET['page'])) {
     if ($_GET['page'] === 'accueil') {
         accueil();
     } elseif ($_GET['page'] === 'produits') {
-        produits();
-    } elseif ($_GET['page'] === 'inscription') {
+        affichProduits();
+    } elseif ($_GET['page'] === 'ajoutProduits') {
+        ajoutProduits();
+    } elseif ($_GET['page'] === 'modifProduits') {
+        modifProduits();
+    } elseif ($_GET['page'] === 'supprProduits') {
+        supprProduits();
+    }  elseif ($_GET['page'] === 'inscription') {
         inscription();
     }
 } else {
