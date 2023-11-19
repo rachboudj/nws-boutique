@@ -6,6 +6,7 @@ require_once('src/Controller/accueil.php');
 require_once('src/Controller/produits.php');
 require_once('src/Controller/inscription.php');
 require_once('src/Controller/panier.php');
+require_once('src/Controller/commande.php');
 
 session_start();
 
@@ -28,6 +29,12 @@ if (isset($_GET['page'])) {
         reduireQuantitePanier();
     } elseif ($_GET['page'] === 'augmenterQuantitePanier') {
         augmenterQuantitePanier();
+    } elseif ($_GET['page'] === 'infoExpedition') {
+        infoExpedition();
+    } elseif ($_GET['page'] === 'recapCommande') {
+        recapCommande();
+    } elseif ($_GET['page'] === 'commandeComplete') {
+        afficherConfirmationCommande();
     } elseif ($_GET['page'] === 'inscription') {
         inscription();
     }
