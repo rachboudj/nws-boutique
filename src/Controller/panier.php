@@ -28,6 +28,44 @@ function ajoutPanier() {
     }
 }
 
+function reduireQuantitePanier() {
+    session_start();
+
+    if (isset($_GET['produitId']) && ctype_digit($_GET['produitId'])) {
+        $idProduit = $_GET['produitId'];
+
+        if (isset($_SESSION['panier'][$idProduit])) {
+            if ($_SESSION['panier'][$idProduit]['quantite'] > 1) {
+                $_SESSION['panier'][$idProduit]['quantite']--;
+            } else {
+                unset($_SESSION['panier'][$idProduit]);
+            }
+        }
+
+        header('Location: index.php?page=affichPanier');
+        exit();
+    }
+}
+
+function augmenterQuantitePanier() {
+    session_start();
+
+    if (isset($_GET['produitId']) && ctype_digit($_GET['produitId'])) {
+        $idProduit = $_GET['produitId'];
+
+        if (isset($_SESSION['panier'][$idProduit])) {
+            if ($_SESSION['panier'][$idProduit]['quantite'] >= 1) {
+                $_SESSION['panier'][$idProduit]['quantite']++;
+            } else {
+                unset($_SESSION['panier'][$idProduit]);
+            }
+        }
+
+        header('Location: index.php?page=affichPanier');
+        exit();
+    }
+}
+
 
 function affichPanier() {
 
