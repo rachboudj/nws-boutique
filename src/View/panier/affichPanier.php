@@ -26,7 +26,7 @@
                 <tr>
                     <td><?= $produit['nom'] ?></td>
                     <td><?= $produit['prix'] ?> €</td>
-                    <td><?= $produit['quantite'] ?></td>
+                    <td><a href="index.php?page=reduireQuantitePanier&produitId=<?= $idProduit; ?>">-</a> <?= $produit['quantite'] ?> <a href="index.php?page=augmenterQuantitePanier&produitId=<?= $idProduit; ?>">+</a></td>
                     <td><?= $totalProduit ?> €</td>
                 </tr>
             <?php endforeach; ?>
