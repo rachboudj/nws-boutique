@@ -38,7 +38,7 @@
             </tr>
         </tfoot>
     </table>
-    <button><a href="#">Valider le panier</a></button>
+    <button><a href="index.php?page=infoExpedition">Valider le panier</a></button>
 <?php endif; ?>
 
 <?php $content = ob_get_clean(); ?>
