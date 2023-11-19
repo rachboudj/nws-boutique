@@ -68,11 +68,10 @@ function modifProduits()
 
             $errors = validationTexte($errors, $nom, 'nom', 3, 100);
             $errors = validationTexte($errors, $description, 'description', 3, 1000);
-            $errors = validationTexte($errors, $quantite, 'quantite', 1, 1000);
             $errors = validationTexte($errors, $prix, 'prix', 1, 1000);
 
             if (count($errors) === 0) {
-                $model->editProducts($nom, $description, $image, $quantite, $prix, $id);
+                $model->editProducts($nom, $description, $image, $prix, $quantite, $id);
                 header('Location: index.php?page=produits');
             }
         }
