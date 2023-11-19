@@ -24,6 +24,10 @@ if (isset($_GET['page'])) {
         ajoutPanier();
     } elseif ($_GET['page'] === 'affichPanier') {
         affichPanier();
+    } elseif ($_GET['page'] === 'reduireQuantitePanier') {
+        reduireQuantitePanier();
+    } elseif ($_GET['page'] === 'augmenterQuantitePanier') {
+        augmenterQuantitePanier();
     } elseif ($_GET['page'] === 'inscription') {
         inscription();
     }
