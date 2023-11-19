@@ -5,6 +5,9 @@ require_once "./src/Database/Database.php";
 require_once('src/Controller/accueil.php');
 require_once('src/Controller/produits.php');
 require_once('src/Controller/inscription.php');
+require_once('src/Controller/panier.php');
+
+session_start();
 
 if (isset($_GET['page'])) {
     if ($_GET['page'] === 'accueil') {
@@ -17,7 +20,11 @@ if (isset($_GET['page'])) {
         modifProduits();
     } elseif ($_GET['page'] === 'supprProduits') {
         supprProduits();
-    }  elseif ($_GET['page'] === 'inscription') {
+    } elseif ($_GET['page'] === 'ajoutPanier') {
+        ajoutPanier();
+    } elseif ($_GET['page'] === 'affichPanier') {
+        affichPanier();
+    } elseif ($_GET['page'] === 'inscription') {
         inscription();
     }
 } else {
