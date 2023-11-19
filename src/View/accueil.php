@@ -9,7 +9,7 @@
             <img src="<?= $produit['image']; ?>" alt="<?= $produit['nom']; ?>">
             <h3><?= $produit['nom']; ?></h3>
             <span><?= $produit['prix']; ?></span>
-            <button><a href="">Ajouter au panier</a></button>
+            <button><a href="index.php?page=ajoutPanier&produitId=<?= $produit['id_produit']; ?>">Ajouter au panier</a></button>
         <?php } ?>
     </div>
 </div>
