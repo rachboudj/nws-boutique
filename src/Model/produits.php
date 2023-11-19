@@ -30,7 +30,7 @@ class ProduitsModel
         return $query->fetchAll();
     }
 
-    public function showEditProducts($id)
+    public function getDetailsProduit($id)
     {
         $requeteAffichage = "SELECT * FROM produits WHERE id_produit = :id_produit";
         $query = $this->pdo->prepare($requeteAffichage);
