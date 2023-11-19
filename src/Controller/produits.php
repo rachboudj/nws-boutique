@@ -57,7 +57,7 @@ function modifProduits()
     if (!empty($_GET['produitId']) && ctype_digit($_GET['produitId'])) {
         $id = $_GET['produitId'];
 
-        $produits = $model->showEditProducts($id);
+        $produits = $model->getDetailsProduit($id);
 
         if (!empty($_POST['submit'])) {
             $nom = trim(strip_tags($_POST['nom']));
