@@ -93,3 +93,19 @@ function supprProduits()
         exit();
     }
 }
+
+function detailsProduits()
+{
+    $pdo = (new Database())->getPdo();
+    $model = new ProduitsModel($pdo);
+
+
+    if (!empty($_GET['produitId']) && ctype_digit($_GET['produitId'])) {
+        $id = $_GET['produitId'];
+        $produits = $model->getDetailsProduit($id);
+
+    }
+
+
+    require './src/View/produits/detailsProduits.php';
+}
