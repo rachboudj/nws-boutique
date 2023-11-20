@@ -1,9 +1,15 @@
-<?php $title = "Panier"; ?>
+<?php $title = "Récapitulatif de la Commande"; ?>
 
 <?php ob_start(); ?>
 
-<h1>Votre Panier</h1>
+<h1>Récapitulatif de Votre Commande</h1>
 
+<h2>Informations d'Expédition</h2>
+    <p>Nom : <?= $_SESSION['expedition']['nom'] ?></p>
+    <p><strong>Adresse :</strong> <?= $_SESSION['expedition']['adresse'] ?></p>
+    <p><strong>Téléphone :</strong> <?= $_SESSION['expedition']['telephone'] ?></p>
+
+<h2>Articles Commandés</h2>
 <?php if (empty($_SESSION['panier'])): ?>
     <p>Votre panier est vide.</p>
 <?php else: ?>
@@ -24,21 +30,23 @@
                 $totalGeneral += $totalProduit;
                 ?>
                 <tr>
-                    <td><?= $produit['nom'] ?></td>
-                    <td><?= $produit['prix'] ?> €</td>
-                    <td><a href="index.php?page=reduireQuantitePanier&produitId=<?= $idProduit; ?>">-</a> <?= $produit['quantite'] ?> <a href="index.php?page=augmenterQuantitePanier&produitId=<?= $idProduit; ?>">+</a></td>
-                    <td><?= $totalProduit ?> €</td>
+                    <td><?= htmlspecialchars($produit['nom']) ?></td>
+                    <td><?= htmlspecialchars($produit['prix']) ?> €</td>
+                    <td><?= $produit['quantite'] ?></td>
+                    <td><?= htmlspecialchars($totalProduit) ?> €</td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
         <tfoot>
             <tr>
                 <th colspan="3">Total général :</th>
-                <th><?= $totalGeneral ?> €</th>
+                <th><?= htmlspecialchars($totalGeneral) ?> €</th>
             </tr>
         </tfoot>
     </table>
-    <button><a href="index.php?page=infoExpedition">Valider le panier</a></button>
+    <form action="index.php?page=commandeComplete" method="post">
+        <button type="submit">Finaliser la Commande</button>
+    </form>
 <?php endif; ?>
 
 <?php $content = ob_get_clean(); ?>

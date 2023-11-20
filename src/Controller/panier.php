@@ -29,8 +29,6 @@ function ajoutPanier() {
 }
 
 function reduireQuantitePanier() {
-    session_start();
-
     if (isset($_GET['produitId']) && ctype_digit($_GET['produitId'])) {
         $idProduit = $_GET['produitId'];
 
@@ -48,16 +46,19 @@ function reduireQuantitePanier() {
 }
 
 function augmenterQuantitePanier() {
-    session_start();
+    $pdo = (new Database())->getPdo();
+    $produitsModel = new ProduitsModel($pdo);
 
     if (isset($_GET['produitId']) && ctype_digit($_GET['produitId'])) {
         $idProduit = $_GET['produitId'];
 
+        $detailsProduit = $produitsModel->getDetailsProduit($idProduit);
+
         if (isset($_SESSION['panier'][$idProduit])) {
-            if ($_SESSION['panier'][$idProduit]['quantite'] >= 1) {
+            if ($_SESSION['panier'][$idProduit]['quantite'] < $detailsProduit['quantite']) {
                 $_SESSION['panier'][$idProduit]['quantite']++;
             } else {
-                unset($_SESSION['panier'][$idProduit]);
+                echo "Quantité maximale atteinte pour ce produit.";
             }
         }
 

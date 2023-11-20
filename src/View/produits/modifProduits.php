@@ -36,9 +36,6 @@
                                                 if (isset($produits['quantite'])) {
                                                     echo $produits['quantite'];
                                                 } ?>">
-    <span class="error"><?php if (!empty($errors['quantite'])) {
-                            echo $errors['quantite'];
-                        } ?></span>
 
     <label for="prix">Prix</label>
     <input type="number" name="prix" step="0.01" value="<?php
