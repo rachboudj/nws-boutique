@@ -4,10 +4,11 @@
 <h1>Bienvenue sur NWS Boutique !</h1>
 
 <div class="container">
+    <h2>Derniers produits ajoutés</h2>
     <div class="card">
         <?php foreach ($produits as $produit) { ?>
             <img src="<?= $produit['image']; ?>" alt="<?= $produit['nom']; ?>">
-            <h3><?= $produit['nom']; ?></h3>
+            <a href="index.php?page=detailsProduits&produitId=<?= $produit['id_produit']; ?>"><?= $produit['nom']; ?></a>
             <span>Prix : <?= $produit['prix']; ?></span>
             <?php if ($produit['quantite'] > 0) : ?>
                 <button><a href="index.php?page=ajoutPanier&produitId=<?= $produit['id_produit']; ?>">Ajouter au panier</a></button>
