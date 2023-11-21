@@ -3,6 +3,11 @@
 <?php ob_start(); ?>
 <h1>Bienvenue sur NWS Boutique !</h1>
 
+<form method="GET">
+    <input class="inputSearch" type="text" name="search" placeholder="Rechercher un produit...">
+    <input class="btn-1" type="submit" value="Rechercher">
+</form>
+
 <div class="container">
     <h2>Derniers produits ajoutés</h2>
     <div class="card">
