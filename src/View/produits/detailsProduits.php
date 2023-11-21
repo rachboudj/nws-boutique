@@ -10,6 +10,7 @@
     <div class="text-container">
         <h2><?= $produits['nom']; ?></h2>
         <span>Prix : <?= $produits['prix']; ?></span>
+        <p>Il reste <?= $produits['quantite']; ?> produit(s)</p>
         <p>Description : <?= $produits['description']; ?></p>
         <?php if ($produits['quantite'] > 0) : ?>
             <button><a href="index.php?page=ajoutPanier&produitId=<?= $produits['id_produit']; ?>">Ajouter au panier</a></button>
