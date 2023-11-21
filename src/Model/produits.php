@@ -59,4 +59,12 @@ class ProduitsModel
             $query->bindValue(':id_produit', $id, PDO::PARAM_INT);
             $query->execute();
     }
+
+    function rechercheProduit($termeRecherche)
+    {
+        $requeteAffichage = "SELECT * FROM produits WHERE nom LIKE '$termeRecherche'";
+        $query = $this->pdo->prepare($requeteAffichage);
+        $query->execute();
+        return $query->fetchAll();
+    }
 }
