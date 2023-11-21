@@ -1,0 +1,28 @@
+@import url(./tableau.css);
+
+body {
+    background-color: #ffffd1;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.container {
+    display: flex;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
