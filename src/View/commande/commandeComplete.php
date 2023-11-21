@@ -3,11 +3,11 @@
 <?php ob_start(); ?>
 
 <h1>Confirmation de Votre Commande</h1>
-<p>Merci pour votre achat ! Votre commande numéro <?= htmlspecialchars($data['numeroCommande']) ?> a été traitée avec succès.</p>
+<p>Merci pour votre achat ! Votre commande a été traitée avec succès.</p>
 
 <h2>Informations d'Expédition</h2>
 <p>
-    Nom: <?= htmlspecialchars($data['infosExpedition']['nom']) ?><br>
+    Nom: <?= $data['infosExpedition']['nom'] ?><br>
     Adresse: <?= htmlspecialchars($data['infosExpedition']['adresse']) ?><br>
     Téléphone: <?= htmlspecialchars($data['infosExpedition']['telephone']) ?>
 </p>

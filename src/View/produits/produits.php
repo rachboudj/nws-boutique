@@ -24,7 +24,7 @@
                     <td><?= $produit['id_produit']; ?></td>
                     <td><?= $produit['nom']; ?></td>
                     <td><?= $produit['description']; ?></td>
-                    <td><?= $produit['image']; ?></td>
+                    <td><img src="<?= $produit['image']; ?>" alt="<?= $produit['nom']; ?>"></td>
                     <td><?= $produit['prix']; ?> €</td>
                     <td><?= $produit['quantite']; ?></td>
                     <td><?= $produit['misEnAvant']; ?></td>

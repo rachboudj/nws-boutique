@@ -54,12 +54,6 @@ function commandeComplete() {
 }
 
 function afficherConfirmationCommande() {
-    if (!isset($_SESSION['numeroCommande'])) {
-        echo "Erreur : Aucun numéro de commande trouvé.";
-        exit();
-    }
-
-    $numeroCommande = $_SESSION['numeroCommande'];
     $infosExpedition = $_SESSION['expedition'] ?? null;
     $panier = $_SESSION['panier'] ?? [];
 
@@ -70,7 +64,6 @@ function afficherConfirmationCommande() {
     unset($_SESSION['panier']);
 
     $data = [
-        'numeroCommande' => $numeroCommande,
         'infosExpedition' => $infosExpedition,
         'panier' => $panier,
         'totalCommande' => $totalCommande

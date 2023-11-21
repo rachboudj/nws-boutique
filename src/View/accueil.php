@@ -8,20 +8,20 @@
     <input class="btn-1" type="submit" value="Rechercher">
 </form>
 
+<h2>Derniers produits ajoutés</h2>
 <div class="container">
-    <h2>Derniers produits ajoutés</h2>
-    <div class="card">
         <?php foreach ($produits as $produit) { ?>
+    <div class="card">
             <img src="<?= $produit['image']; ?>" alt="<?= $produit['nom']; ?>">
             <a href="index.php?page=detailsProduits&produitId=<?= $produit['id_produit']; ?>"><?= $produit['nom']; ?></a>
-            <span>Prix : <?= $produit['prix']; ?></span>
+            <span><?= $produit['prix']; ?> €</span>
             <?php if ($produit['quantite'] > 0) : ?>
                 <button><a href="index.php?page=ajoutPanier&produitId=<?= $produit['id_produit']; ?>">Ajouter au panier</a></button>
             <?php else : ?>
                 <span>Épuisé</span>
             <?php endif; ?>
-        <?php } ?>
     </div>
+        <?php } ?>
 </div>
 
 
